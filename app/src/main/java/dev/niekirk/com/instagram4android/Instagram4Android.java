@@ -90,7 +90,7 @@ public class Instagram4Android implements Serializable {
     protected String verificationCode;
     protected String challengeUrl;
 
-    private transient final HashMap<String, Cookie> cookieStore = new HashMap<>();
+    private transient HashMap<String, Cookie> cookieStore = new HashMap<>();
 
     /**
      * @param username Username
@@ -116,7 +116,7 @@ public class Instagram4Android implements Serializable {
     }
 
     public void setup() {
-        cookieStore = new HashMap<>();
+        
         if (this.username.isEmpty()) {
             throw new IllegalArgumentException("Username is mandatory.");
         }
@@ -135,7 +135,7 @@ public class Instagram4Android implements Serializable {
             this.advertisingId = InstagramGenericUtil.generateUuid(true);
         }
 
-        if (this.jarCookie == null) {
+        if (this.jarCookie == null and cookieStore != null) {
             client = new OkHttpClient.Builder()
                     .cookieJar(this.jarCookie = new CookieJar() {
                         @Override
