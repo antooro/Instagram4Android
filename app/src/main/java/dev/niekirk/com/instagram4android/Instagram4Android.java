@@ -60,10 +60,10 @@ public class Instagram4Android implements Serializable {
     protected String password;
 
     @Getter
-    protected Credentials credentialsProvider;
+    protected transient Credentials credentialsProvider;
 
     @Getter @Setter
-    protected OkHostnameVerifier proxy;
+    protected transient OkHostnameVerifier proxy;
 
     @Getter @Setter
     protected long userId;
@@ -75,13 +75,13 @@ public class Instagram4Android implements Serializable {
     protected boolean isLoggedIn;
 
     @Getter @Setter
-    protected Response lastResponse;
+    protected transient Response lastResponse;
 
     @Getter @Setter
     protected boolean debug;
 
     @Getter
-    protected CookieJar jarCookie;
+    protected transient CookieJar jarCookie;
 
     @Getter
     protected transient OkHttpClient client;
