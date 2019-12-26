@@ -116,7 +116,7 @@ public class Instagram4Android implements Serializable {
     }
 
     public void setup() {
-
+        cookieStore = new HashMap<>();
         if (this.username.isEmpty()) {
             throw new IllegalArgumentException("Username is mandatory.");
         }
