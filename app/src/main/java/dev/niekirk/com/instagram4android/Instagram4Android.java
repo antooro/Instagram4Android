@@ -90,7 +90,7 @@ public class Instagram4Android implements Serializable {
     protected String verificationCode;
     protected String challengeUrl;
 
-    private final HashMap<String, Cookie> cookieStore = new HashMap<>();
+    private transient final HashMap<String, Cookie> cookieStore = new HashMap<>();
 
     /**
      * @param username Username
