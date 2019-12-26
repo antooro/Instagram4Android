@@ -135,7 +135,7 @@ public class Instagram4Android implements Serializable {
             this.advertisingId = InstagramGenericUtil.generateUuid(true);
         }
 
-        if (this.jarCookie == null and cookieStore != null) {
+        if (this.jarCookie == null || cookieStore != null) {
             client = new OkHttpClient.Builder()
                     .cookieJar(this.jarCookie = new CookieJar() {
                         @Override
