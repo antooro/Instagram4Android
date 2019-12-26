@@ -84,7 +84,7 @@ public class Instagram4Android implements Serializable {
     protected CookieJar jarCookie;
 
     @Getter
-    protected OkHttpClient client;
+    protected transient OkHttpClient client;
 
     protected String identifier;
     protected String verificationCode;
